@@ -1,4 +1,6 @@
 import { combineReducers } from "redux";
-import { shoppingListData } from "../reducers/reducer.js";
+import { addItemReducer } from "./addItem";
+import { deleteItems } from "./deleteItem";
+import { editItems } from "./editItem";
 
-export default combineReducers({ shoppingListData });
+export default combineReducers({ addItemReducer, deleteItems });

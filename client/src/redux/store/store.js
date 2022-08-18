@@ -1,8 +1,6 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import createSagaMiddleware from "redux-saga";
 import rootreducer from "../reducers/rootreducer";
-const dummyReducer = () => {
-  return console.log("yes redux");
-};
 
 const store = createStore(rootreducer);
 

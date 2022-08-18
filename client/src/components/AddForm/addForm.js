@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useReducer } from "react";
 import {
   Typography,
   Card,
@@ -10,27 +10,27 @@ import {
   InputLabel,
   FormControl,
 } from "@mui/material/";
-import { addItemToList } from "../../redux/actions/actions";
-import { useDispatch } from "react-redux";
+import { addItemReducer } from "../../redux/reducers/addItem";
 import BasicButton from "../Button/button";
-const intialState = {
-  name: "",
-  description: "",
-  count: "",
-};
-function reducer(state, addItemToList) {
-  return { ...state, [addItemToList.key]: addItemToList.value };
-}
+import { initialState } from "../../redux/reducers/initialState";
+import * as types from "../../constants/actionTypes";
 
 export default function AddForm() {
-  const [state, dispatch] = useReducer(reducer, intialState);
+  const [state, dispatch] = useReducer(addItemReducer, initialState);
 
   const handleChange = (e) => {
     dispatch({
+      type: types.ADD_ITEMS,
       value: e.target.value,
       key: e.target.name,
     });
   };
+
+  const submitButton = () => {
+    console.log("submit button clicked", state);
+  };
+
+  console.log(handleChange);
   return (
     <div>
       <Typography align="left"> Add an Item</Typography>
@@ -47,7 +47,7 @@ export default function AddForm() {
                 required
                 name="name"
                 value={state.name}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e)}
               />
             </Grid>
             <Grid xs={12} item>
@@ -87,7 +87,11 @@ export default function AddForm() {
               <BasicButton name="Cancel" variant="outlined" />
             </Grid>
             <Grid xs={12} sm={6} item>
-              <BasicButton name="Add item" variant="contained" />
+              <BasicButton
+                name="Add item"
+                variant="contained"
+                onClick={submitButton}
+              />
             </Grid>
           </Grid>
         </CardContent>
