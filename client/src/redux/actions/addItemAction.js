@@ -1,7 +1,7 @@
-import * as types from "../../constants/actionTypes";
+import * as types from '../../constants/actionTypes';
 
+//describe the changes in the state of the application
 export const addItemAction = (data) => {
-  console.log("action is called", data);
   return {
     type: types.ADD_ITEMS,
     data,

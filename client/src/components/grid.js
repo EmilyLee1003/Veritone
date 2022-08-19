@@ -17,7 +17,10 @@ export default function GridItems(props) {
         <Grid item xs={12}>
           <Item>
             <p>{props.itemName} </p>
-            <div className="material-icons" onClick={props.edit}></div>
+            <div className="material-icons" onClick={props.edit}>
+              {" "}
+              edit
+            </div>
             <div className="material-icons" onClick={props.delete}>
               delete
             </div>

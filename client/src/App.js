@@ -1,18 +1,19 @@
-import * as React from "react";
-import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home/home.js";
-import AddItem from "./components/AddItem/addItem.js";
-import ShoppingList from "./components/ShoppingList/shoppingList.js";
-import Bar from "./components/appBar/appBar";
-import "./App.css";
+import * as React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/home';
+import ShoppingList from './pages/shoppingList';
+import Bar from './components/appBar';
+import Loading from './pages/loading';
+import './App.css';
 
 function App() {
   return (
+    // eslint-disable-next-line react/jsx-filename-extension
     <div className="App">
       <Bar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="additem" element={<AddItem />} />
+        <Route path="loading" element={<Loading />} />
         <Route path="shoppingList" element={<ShoppingList />} />
       </Routes>
     </div>
