@@ -14,7 +14,7 @@ export const loadItemReducer = (state = initialState, action) => {
         loading: false,
         data: action.payload,
       };
-    case types.LOAD_ITEEMS_ERROR:
+    case types.LOAD_ITEMS_ERROR:
       return {
         ...state,
         loading: false,

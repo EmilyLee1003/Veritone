@@ -1,5 +1,1 @@
-export const initialState = {
-  name: "",
-  description: "",
-  count: "",
-};
+export const initialState = [{ name: '', description: '', count: '' }];

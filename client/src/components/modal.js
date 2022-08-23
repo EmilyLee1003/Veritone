@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import BasicButton from '../components/button';
+import AddForm from '../components/addForm';
 const style = {
   position: 'absolute',
   top: '50%',
@@ -25,15 +26,10 @@ export default function AddModal(props) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+          <AddForm />
           <BasicButton
-            variant="contained"
-            name="close"
+            variant="outlined"
+            name="Cancel"
             onClick={props.close}
           ></BasicButton>
         </Box>

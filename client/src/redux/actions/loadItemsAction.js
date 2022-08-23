@@ -10,6 +10,6 @@ export const loadItemsSuccess = (data) => ({
 });
 
 export const loadItemsError = (error) => ({
-  type: type.loadItemError,
+  type: type.LOAD_ITEMS_ERROR,
   payload: error,
 });

@@ -1,30 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { loadItemsStart } from '../redux/actions/loadItemsAction';
 import BasicButton from '../components/button';
 import AddModal from '../components/modal';
+// let navigate = useNavigate();
 
 export default function Home() {
   const [openModal, setOpenModal] = useState(false);
   const dispatch = useDispatch();
 
-  //check
-  useEffect(() => {
-    dispatch(loadItemsStart());
-  }, []);
+  // //check
+  // useEffect(() => {
+  //   dispatch(addIt);
+  // }, []);
 
   const addItemButton = () => {
     setOpenModal(true);
   };
-  console.log('addItemButton', openModal);
-  // const openModal = () => {
-  //   console.log('show modal button clicked');
-  //   setModal(true);
-  // };
 
   const closeModal = () => {
-    console.log('close modal button clicked');
     setOpenModal(false);
+    console.log('close modal clicked', openModal);
   };
 
   return (
