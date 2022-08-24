@@ -6,8 +6,3 @@ export const addItem = (item) => ({
   type: types.ADD_ITEM,
   payload: item,
 });
-
-export const addItemSaga = (item) => ({
-  type: types.ADD_ITEM_SAGA,
-  payload: item,
-});

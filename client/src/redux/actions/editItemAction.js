@@ -6,9 +6,3 @@ export const editItem = (item) => {
     payload: item,
   };
 };
-export const editItemSaga = (item) => {
-  return {
-    type: types.EDIT_ITEM_SAGA,
-    payload: item,
-  };
-};

@@ -9,7 +9,9 @@ import AddModal from '../components/modal';
 export default function Home() {
   const [openModal, setOpenModal] = useState(false);
   const dispatch = useDispatch();
+  const state = useSelector((state) => state.data);
 
+  console.log('STATE', state);
   // //check
   // useEffect(() => {
   //   dispatch(addIt);

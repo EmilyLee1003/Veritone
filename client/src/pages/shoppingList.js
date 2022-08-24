@@ -11,7 +11,7 @@ import AddModal from '../components/modal';
 import { loadItemsStart } from '../redux/actions/loadItemsAction';
 import { Typography } from '@mui/material';
 import AllItems from '../components/allItems';
-export default function ShoppingList(item) {
+export default function ShoppingList() {
   const [openModal, setOpenModal] = useState(false);
 
   const state = useSelector((state) => state.data);
@@ -25,9 +25,8 @@ export default function ShoppingList(item) {
     setOpenModal(true);
   };
 
-  const deleteButton = () => {
-    console.log('delete button clicked');
-    dispatch(deleteItem({ name: item.name }));
+  const deleteButton = (name) => {
+    dispatch(deleteItem(name));
   };
 
   const closeModal = () => {
@@ -42,8 +41,15 @@ export default function ShoppingList(item) {
       {state &&
         state.map((item, index) => (
           <Box sx={{ width: '100%' }} key={index}>
+            <Typography> {index}</Typography>
             <Typography> {item.name}</Typography>
-            <GridItems edit={editButton} delete={deleteButton}></GridItems>
+            <BasicButton
+              name="delete"
+              variant="contained"
+              value={item.name}
+              onClick={() => deleteButton(item.name)}
+            ></BasicButton>
+            <BasicButton name="edit" variant="contained"></BasicButton>
           </Box>
         ))}
     </div>

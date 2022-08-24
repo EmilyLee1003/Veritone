@@ -7,10 +7,3 @@ export const deleteItem = (name) => {
     payload: name,
   };
 };
-
-export const deleteItemSaga = (name) => {
-  return {
-    type: types.DELETE_ITEM_SAGA,
-    payload: name,
-  };
-};

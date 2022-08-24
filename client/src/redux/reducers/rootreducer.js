@@ -1,11 +1,11 @@
 /* eslint-disable import/prefer-default-export */
 import { combineReducers } from 'redux';
-import { addItemReducer } from './addItem';
+import { itemReducer } from './itemReducer';
 // import { loadItemReducer } from './loadItem';
-// import { deleteItems } from "./deleteItem";
+
 // import { editItems } from "./editItem";
 
 export const rootReducer = combineReducers(
   // { data: loadItemReducer },
-  { data: addItemReducer }
+  { data: itemReducer }
 );
